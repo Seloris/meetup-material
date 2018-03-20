@@ -42,13 +42,17 @@
               <mat-hint align="end">{{cmtCtrl.value.length}} / 20</mat-hint>
             </mat-form-field>
             <mat-form-field>
-              <mat-select placeholder="Instrument favori" [(value)]="person.instrument">
+              <mat-select #instruCtrl="ngModel" required name="instrument" placeholder="Instrument favori" [(ngModel)]="person.instrument">
                 <mat-option>None</mat-option>
                 <mat-option value="basse">Basse</mat-option>
                 <mat-option value="guitare">Guitare</mat-option>
                 <mat-option value="batterie">Batterie</mat-option>
                 <mat-option value="triangle">Triangle</mat-option>
               </mat-select>
+              <mat-hint>
+                <mat-icon class="info-icon">info</mat-icon>La basse est le meilleur instrument de la liste</mat-hint>
+              <mat-error *ngIf="instruCtrl.hasError('required')">Format invalide !</mat-error>
+
             </mat-form-field>
           </mat-card-content>
           <mat-card-actions>
