@@ -1,0 +1,46 @@
+<mat-toolbar color="primary" class="mat-elevation-z1">
+  <mat-toolbar-row>
+    <button (click)="sidenav.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    Angular Paris - Material
+    <div class="spacer"></div>
+    <button mat-icon-button [matMenuTriggerFor]="headerMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #headerMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon color="primary">insert_emoticon</mat-icon>
+        <span>Se déconnecter</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon color="warn">power_settings_new</mat-icon>
+        <span>Se déconnecter</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <a [routerLink]="['/home']" mat-button>
+      <mat-icon>home</mat-icon>
+      <span class="link-text">Accueil</span>
+    </a>
+    <a [routerLink]="['/forms']" mat-button>
+      <mat-icon>view_column</mat-icon>
+      <span class="link-text">Formulaire 1</span>
+    </a>
+    <a [routerLink]="['/home']" mat-button>
+      <mat-icon>trending_up</mat-icon>
+      <span class="link-text">Onglet 2</span>
+    </a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <div class="content">
+      <router-outlet>
+      </router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

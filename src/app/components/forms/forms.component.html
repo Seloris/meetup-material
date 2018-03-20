@@ -1,0 +1,72 @@
+<mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="firstForm">
+    <form>
+      <ng-template matStepLabel>Première étape</ng-template>
+      <mat-card>
+        <form #firstForm="ngForm">
+          <mat-card-content>
+            <mat-form-field>
+              <input #fnControl="ngModel" matInput [(ngModel)]="person.firstName" name="firstname" placeholder="Prénom" required>
+              <mat-error *ngIf="fnControl.hasError('required')">Le prénom est requis</mat-error>
+            </mat-form-field>
+            <mat-form-field class="lastname">
+              <input #lnControl="ngModel" matInput [(ngModel)]="person.lastName" name="lastname" placeholder="Nom de famille" required>
+              <mat-error *ngIf="lnControl.hasError('required')">Le nom de famille est requis</mat-error>
+            </mat-form-field>
+
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button matStepperNext>Suivant</button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondForm">
+    <form>
+      <ng-template matStepLabel>Seconde étape</ng-template>
+      <mat-card>
+        <form #secondForm="ngForm">
+          <mat-card-content class="vertical">
+            <mat-form-field>
+              <input #bdInput="ngModel" matInput [(ngModel)]="person.birthDate" name="birthdate" [min]="minDate" [max]="maxDate" [matDatepicker]="picker"
+                placeholder="Saisir sa date de naissance" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="bdInput.hasError('required') && !bdInput.hasError('matDatepickerParse')">La date de naissance est requise.</mat-error>
+              <mat-error *ngIf="bdInput.hasError('matDatepickerParse')">Format invalide !</mat-error>
+            </mat-form-field>
+            <mat-form-field class="comment">
+              <input matInput [(ngModel)]="person.comment" name="comment" #cmtCtrl maxlength="20" placeholder="Commentaire">
+              <mat-hint align="start">Un commentaire optionnel en moins de 20 caractères</mat-hint>
+              <mat-hint align="end">{{cmtCtrl.value.length}} / 20</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-select placeholder="Instrument favori" [(value)]="person.instrument">
+                <mat-option>None</mat-option>
+                <mat-option value="basse">Basse</mat-option>
+                <mat-option value="guitare">Guitare</mat-option>
+                <mat-option value="batterie">Batterie</mat-option>
+                <mat-option value="triangle">Triangle</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-card-content>
+          <mat-card-actions>
+            <button color="warn" mat-button (click)="stepper.reset()">Recommencer</button>
+            <button mat-button matStepperPrevious>Précédent</button>
+            <div class="spacer"></div>
+            <button color="primary" mat-raised-button matStepperNext>Terminer</button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Fin/Résultat</ng-template>
+    <mat-card>
+      <mat-card-content>
+        <pre>{{person | json}}</pre>
+      </mat-card-content>
+    </mat-card>
+  </mat-step>
+</mat-horizontal-stepper>
