@@ -20,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
 
 // Buttons & indicators
 import { MatButtonModule } from '@angular/material/button';
@@ -32,6 +33,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 // Popups & Modal
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // Table
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -66,5 +68,7 @@ export const materialModules = [
   MatTooltipModule,
   MatPaginatorModule,
   MatSortModule,
+  MatListModule,
+  MatSnackBarModule,
   MatTableModule];
 

@@ -34,6 +34,14 @@
       <mat-icon>grid_on</mat-icon>
       <span class="link-text">Table</span>
     </a>
+    <a (click)="sidenav.close()" [routerLink]="['/popup']" mat-button>
+      <mat-icon>aspect_ratio</mat-icon>
+      <span class="link-text">Popup</span>
+    </a>
+    <a (click)="sidenav.close()" [routerLink]="['/snackbar']" mat-button>
+      <mat-icon>info</mat-icon>
+      <span class="link-text">SnackBar</span>
+    </a>
   </mat-sidenav>
   <mat-sidenav-content>
 
