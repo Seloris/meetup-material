@@ -22,15 +22,15 @@
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="over">
-    <a [routerLink]="['/home']" mat-button>
+    <a (click)="sidenav.close()" [routerLink]="['/home']" mat-button>
       <mat-icon>home</mat-icon>
       <span class="link-text">Accueil</span>
     </a>
-    <a [routerLink]="['/forms']" mat-button>
+    <a (click)="sidenav.close()" [routerLink]="['/forms']" mat-button>
       <mat-icon>view_column</mat-icon>
       <span class="link-text">Formulaire 1</span>
     </a>
-    <a [routerLink]="['/table']" mat-button>
+    <a (click)="sidenav.close()" [routerLink]="['/table']" mat-button>
       <mat-icon>grid_on</mat-icon>
       <span class="link-text">Table</span>
     </a>

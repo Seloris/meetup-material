@@ -22,7 +22,9 @@
 
     <ng-container matColumnDef="moduleImport">
       <mat-header-cell *matHeaderCellDef>Import Module</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.moduleImport }}</mat-cell>
+      <mat-cell *matCellDef="let row">
+        <pre class="import">{{ row.moduleImport }}</pre>
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
