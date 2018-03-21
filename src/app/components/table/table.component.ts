@@ -19,7 +19,17 @@ import { NgForm } from '@angular/forms';
 })
 export class TableComponent implements AfterViewInit {
 
-  displayedColumns = ['name', 'category', 'moduleImport'];
+
+  private _displayedColumns = ['name', 'category', 'moduleImport'];
+  get displayedColumns() {
+    if (this.isReverse) {
+      return [...this._displayedColumns].reverse();
+    }
+    return this._displayedColumns;
+  }
+
+  isReverse: false;
+
   resultsLength = 0;
   isLoadingResults = true;
 

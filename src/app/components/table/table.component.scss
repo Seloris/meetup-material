@@ -14,6 +14,11 @@
         font-size: 0.8em;
         color: rgb(102, 102, 102);
     }
+    mat-slide-toggle {
+        position: absolute;
+        top: 24px;
+        right: 48px;
+    }
 }
 
 .example-header {

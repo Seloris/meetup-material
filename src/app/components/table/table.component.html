@@ -8,6 +8,11 @@
     </mat-form-field>
   </form>
 
+  <mat-slide-toggle color="primary" [(ngModel)]="isReverse">
+    Inverser les colonnes
+  </mat-slide-toggle>
+
+
   <mat-table #table [dataSource]="dataSource" class="example-table" matSort matSortActive="category" matSortDisableClear matSortDirection="asc">
 
     <ng-container matColumnDef="name">
