@@ -6,6 +6,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { TableComponent } from './components/table/table.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { ChipsComponent } from './components/chips/chips.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'table', component: TableComponent },
   { path: 'popup', component: PopupComponent },
   { path: 'snackbar', component: SnackbarComponent },
+  { path: 'chips', component: ChipsComponent },
   { path: '**', redirectTo: 'home' }
 ];
 

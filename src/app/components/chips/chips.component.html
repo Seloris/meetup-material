@@ -1,0 +1,19 @@
+<mat-chip-list class="mat-chip-list-stacked">
+  <mat-chip *ngFor="let chip of availableColors" selected="true" [color]="chip.color">
+    {{chip.name}}
+  </mat-chip>
+</mat-chip-list>
+
+<mat-form-field class="demo-chip-list">
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let chip of chips"
+             removable="true" (remove)="remove(chip)">
+      {{chip.name}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+    <input placeholder="New chips..."
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           (matChipInputTokenEnd)="add($event)" />
+  </mat-chip-list>
+</mat-form-field>

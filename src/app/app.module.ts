@@ -14,6 +14,7 @@ import { MatInfoService } from './components/table/mat-info.service';
 import { PopupComponent } from './components/popup/popup.component';
 import { LinkListComponent } from './components/popup/link-list/link-list.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { ChipsComponent } from './components/chips/chips.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     PopupComponent,
     LinkListComponent,
     SnackbarComponent,
+    ChipsComponent,
   ],
   entryComponents: [
     LinkListComponent
