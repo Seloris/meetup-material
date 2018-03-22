@@ -9,7 +9,6 @@ import { MatSnackBar } from '@angular/material';
 export class SnackbarComponent implements OnInit {
   loading = false;
 
-
   constructor(private snackar: MatSnackBar) { }
 
   ngOnInit() {

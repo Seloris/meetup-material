@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  @HostBinding('class.dark-theme') darkThemeEnabled: boolean;
+
+  toggleTheme() {
+    this.darkThemeEnabled = !this.darkThemeEnabled;
+  }
 }

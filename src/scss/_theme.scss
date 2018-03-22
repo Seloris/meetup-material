@@ -5,12 +5,29 @@ $mainFont: Roboto,
 "Helvetica Neue",
 sans-serif;
 $custom-typography: mat-typography-config( $font-family: quote($mainFont), $body-1: mat-typography-level(1rem, 1.2rem, 300), $button: mat-typography-level(1rem, 1.1rem, 300), $headline: mat-typography-level(1.4rem, 1.6rem, 700), $title: mat-typography-level(1.2rem, 1.2em, 400), $subheading-2: mat-typography-level(1rem, 1.2em, 400), $subheading-1: mat-typography-level(1.1rem, 1.2em, 400));
+
+// include once
 @include mat-core($custom-typography);
+
 // palette : https://material.io/color/#!/?view.left=0&view.right=0&primary.color=009688
-$app-primary: mat-palette($mat-indigo, 600);
-$app-accent: mat-palette($mat-grey, 800);
+// Primary light
+$app-primary: mat-palette($mat-red, 700);
+$app-accent: mat-palette($mat-blue-grey, 700);
 $app-warn: mat-palette($mat-deep-orange, 800);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+// Alternative dark
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent : mat-palette($mat-grey, A200, A100, A400);
+$dark-warn : mat-palette($mat-deep-orange);
+$dark-theme : mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
 @include angular-material-theme($app-theme);
-// Custom themes
 @include home-component-theme($app-theme);
+
+// Alternative theme
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+  @include home-component-theme($dark-theme);
+}
+

@@ -5,7 +5,7 @@
     $warn: map-get($theme, warn);
     .custom-container {
         background: mat-color($primary);
-        color: mat-color($accent, 300);
+        color: mat-color($accent, 100);
         border-color: mat-color($warn);
     }
 }
