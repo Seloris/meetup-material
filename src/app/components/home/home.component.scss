@@ -1,0 +1,10 @@
+:host {
+    .custom-container {
+        border-width: 2px;
+        border-style: solid;
+        min-height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

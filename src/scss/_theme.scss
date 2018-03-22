@@ -1,5 +1,6 @@
 @import '~@angular/material/theming';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '../app/components/home/_home.component.theme.scss';
 $mainFont: Roboto,
 "Helvetica Neue",
 sans-serif;
@@ -11,3 +12,5 @@ $app-accent: mat-palette($mat-grey, 800);
 $app-warn: mat-palette($mat-deep-orange, 800);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
+// Custom themes
+@include home-component-theme($app-theme);

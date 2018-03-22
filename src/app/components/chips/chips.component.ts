@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material';
-import {ENTER, COMMA} from '@angular/cdk/keycodes';
+import { ENTER, COMMA } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-chips',
@@ -24,10 +24,15 @@ export class ChipsComponent implements OnInit {
     { name: 'Vico' },
   ];
 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 
   add(event: MatChipInputEvent): void {
-    let input = event.input;
-    let value = event.value;
+    const { input } = event;
+    const { value } = event;
 
     // Add our fruit
     if ((value || '').trim()) {
@@ -41,16 +46,10 @@ export class ChipsComponent implements OnInit {
   }
 
   remove(chips: any): void {
-    let index = this.chips.indexOf(chips);
+    const index = this.chips.indexOf(chips);
 
     if (index >= 0) {
       this.chips.splice(index, 1);
     }
   }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
